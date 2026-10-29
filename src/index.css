@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "./Styles/theme.css";
+
+body {
+  @apply bg-slate-50 font-sans text-secondary antialiased;
+}

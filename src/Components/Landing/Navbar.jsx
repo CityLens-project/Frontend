@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logoIcon from '../../assets/citylens_icon.pnggit add.'
+import logoIcon from '../../assets/citylens_icon.png'
 import logoText from '../../assets/citylens_text_transparent.png'
 
 export default function Navbar() {

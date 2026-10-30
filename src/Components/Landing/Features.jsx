@@ -5,7 +5,7 @@ const features = [
   {
     icon: Map,
     title: 'Monitor your city',
-    text: 'View traffic conditions, road issues, and city updates on one map',
+    text: 'View traffic conditions, road issues, and city updates on one map.',
   },
   {
     icon: Sparkles,

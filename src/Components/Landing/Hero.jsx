@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import cityMap from "../../assets/Sadat City Traffic Map Infographic.png";
 
 export default function Hero() {
   return (
@@ -27,13 +28,13 @@ export default function Hero() {
         </div>
 
         <article className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div className="flex items-center justify-between">
-            <h2 className="font-semibold text-secondary">
-              CityLens at a glance
-            </h2>
-          </div>
+          <h2 className="font-semibold text-secondary">CityLens at a glance</h2>
 
-          <div className="mt-5 h-64 w-full rounded-2xl bg-slate-100 sm:h-80" />
+          <img
+            src={cityMap}
+            alt="City map showing traffic conditions and reported road issues"
+            className="mt-5 aspect-16/10 w-full rounded-2xl object-cover"
+          />
         </article>
       </div>
     </section>

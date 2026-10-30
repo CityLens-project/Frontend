@@ -25,7 +25,7 @@ export default function Features() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-16">
           <div className="lg:w-[450px] lg:shrink-0">
-            <span className="text-[12px] font-semibold text-success">
+            <span className="inline-block rounded-full bg-success/10 px-3 py-1 text-[12px] font-semibold text-success">
               Meet CityLens
             </span>
             <h2 className="mt-3 text-3xl font-bold leading-tight text-secondary">

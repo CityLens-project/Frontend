@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, Mail } from 'lucide-react'
-import FormField from './FormField'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft, ArrowRight, Mail } from "lucide-react";
+import FormField from "./FormField";
 export default function LoginForm() {
-  const navigate = useNavigate()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    navigate('/overview')
-  }
+    e.preventDefault();
+    navigate("/dashboard/overview");
+  };
 
   return (
     <main className="flex flex-1 flex-col items-center justify-center gap-8 px-4 py-8 sm:px-6 md:px-8 xl:px-[100px] xl:py-12">
@@ -61,7 +61,10 @@ export default function LoginForm() {
             <input type="checkbox" className="size-4 accent-primary" />
             Remember me
           </label>
-          <button type="button" className="text-[13px] font-medium text-primary hover:underline">
+          <button
+            type="button"
+            className="text-[13px] font-medium text-primary hover:underline"
+          >
             Forgot password?
           </button>
         </div>
@@ -83,5 +86,5 @@ export default function LoginForm() {
         Your information stays private and secure.
       </p>
     </main>
-  )
+  );
 }

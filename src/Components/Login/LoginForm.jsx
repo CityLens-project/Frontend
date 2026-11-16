@@ -13,10 +13,10 @@ export default function LoginForm() {
   };
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-8 px-4 py-8 sm:px-6 md:px-8 xl:px-[100px] xl:py-12">
+    <main className="flex min-h-screen w-full flex-1 flex-col items-center justify-center gap-4 px-4 py-8 sm:px-6 md:gap-[clamp(16px,3vh,32px)] md:px-8 md:py-[clamp(16px,4vh,48px)] xl:px-[100px]">
       <Link
         to="/"
-        className="flex w-full max-w-[640px] items-center gap-2 text-[13px] text-slate-500 transition-colors hover:text-secondary"
+        className="flex w-full max-w-[440px] items-center gap-2 text-[13px] text-slate-500 transition-colors hover:text-secondary"
       >
         <ArrowLeft size={16} aria-hidden="true" />
         Back to CityLens
@@ -24,7 +24,7 @@ export default function LoginForm() {
 
       <form
         onSubmit={handleSubmit}
-        className="flex w-full max-w-[440px] flex-col gap-[22px] md:pt-12 xl:pt-[120px]"
+        className="flex w-full max-w-[440px] flex-col gap-[clamp(14px,2.4vh,22px)]"
       >
         <div className="flex flex-col gap-2">
           <h1 className="text-[32px] font-bold text-secondary">Welcome.</h1>

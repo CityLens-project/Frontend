@@ -31,10 +31,10 @@ export default function Hero() {
           <h2 className="font-semibold text-secondary">CityLens at a glance</h2>
 
           <img
-            src={cityMap}
-            alt="City map showing traffic conditions and reported road issues"
-            className="mt-5 aspect-16/10 w-full rounded-2xl object-cover"
-          />
+  src={cityMap}
+  alt="City map showing traffic conditions and reported road issues"
+  className="mt-5 block h-auto w-full rounded-2xl"
+/>
         </article>
       </div>
     </section>

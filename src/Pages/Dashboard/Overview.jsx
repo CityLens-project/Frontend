@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import { Car, CircleCheck, MessageSquare, TriangleAlert } from 'lucide-react'
 import PageHeading from '../../Components/Dashboard/PageHeading'
 import StatCard from '../../Components/Dashboard/StatCard'
@@ -48,4 +46,4 @@ export default function Overview() {
     </div>
   )
 }
->>>>>>> Stashed changes
+

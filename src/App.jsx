@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./Pages/Landing";
 import Login from "./Pages/Login";
 import Overview from "./Pages/Dashboard/Overview";
-
+import Complaints from "./Pages/Dashboard/Complaints";
 import DashboardLayout from "./Components/Layout/DashboardLayout";
 
 export default function App() {

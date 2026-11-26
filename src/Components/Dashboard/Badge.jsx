@@ -4,6 +4,7 @@ const tones = {
   danger: 'bg-danger/10 text-danger',
   warning: 'bg-warning/10 text-amber-700',
   resolved: 'bg-green-50 text-green-700',
+  assigned: 'bg-secondary/10 text-secondary',
 }
 
 export default function Badge({ tone = 'primary', children }) {

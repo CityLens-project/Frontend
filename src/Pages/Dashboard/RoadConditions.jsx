@@ -63,7 +63,7 @@ export default function RoadCondition() {
     {
       label: 'Healthy roads',
       value: summary.counts.good,
-      context: ${summary.healthyPercentage}% in good condition,
+     context: `${summary.healthyPercentage}% in good condition`,
       icon: CircleCheck,
       iconClassName: 'text-success',
     },

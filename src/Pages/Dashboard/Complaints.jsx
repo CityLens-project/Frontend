@@ -7,6 +7,7 @@ import ComplaintTabs from '../../Components/Complaints/ComplaintTabs'
 import ComplaintFilters from '../../Components/Complaints/ComplaintFilters'
 import ComplaintsTable from '../../Components/Complaints/ComplaintsTable'
 import Pagination from '../../Components/Dashboard/Pagination'
+import Pagination from '../../Components/Complaints/Pagination'
 import PriorityNotice from '../../Components/Complaints/PriorityNotice'
 import {
   DISTRICTS,
@@ -134,6 +135,13 @@ export default function Complaints() {
         <ComplaintsTable complaints={items} />
         <Pagination page={page} pageSize={PAGE_SIZE} total={total} onPageChange={setPage} itemLabel="complaints"/>
       </section>
+      <PriorityNotice count={summary.highPriorityRoadIssues} />
+    </div>
+  )
+}
+        <Pagination page={page} pageSize={PAGE_SIZE} total={total} onPageChange={setPage} />
+      </section>
+
       <PriorityNotice count={summary.highPriorityRoadIssues} />
     </div>
   )

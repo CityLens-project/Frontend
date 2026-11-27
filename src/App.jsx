@@ -20,7 +20,7 @@ export default function App() {
         <Route path="traffic-analytics" element={<div>Traffic analytics</div>} />
         <Route path="road-conditions" element={<div>Road conditions</div>} />
         <Route path="ai-predictions" element={<div>AI predictions</div>} />
-        <Route path="complaints" element={<div>Complaints</div>} />
+        <Route path="complaints" element={<Complaints />} />
         <Route path="smart-map" element={<div>Smart map</div>} />
       </Route>
     </Routes>

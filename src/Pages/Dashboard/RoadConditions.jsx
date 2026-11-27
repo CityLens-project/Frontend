@@ -63,7 +63,7 @@ export default function RoadCondition() {
     {
       label: 'Healthy roads',
       value: summary.counts.good,
-     context: `${summary.healthyPercentage}% in good condition`,
+      context: `${summary.healthyPercentage}% in good condition`,
       icon: CircleCheck,
       iconClassName: 'text-success',
     },
@@ -77,7 +77,7 @@ export default function RoadCondition() {
     {
       label: 'Damaged roads',
       value: summary.counts.damaged,
-      context: ${summary.counts.highPriority} high-priority issues,
+      context: `${summary.counts.highPriority} high-priority issues`,
       icon: TriangleAlert,
       iconClassName: 'text-danger',
     },

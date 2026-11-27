@@ -26,7 +26,6 @@ export default function App() {
           element={<div>Traffic analytics</div>}
         />
         <Route path="road-conditions" element={<RoadCondition/>} />
-        <Route path="road-conditions" element={<div>Road conditions</div>} />
         <Route path="ai-predictions" element={<AiPredictions />} />
         <Route path="complaints" element={<Complaints />} />
         <Route path="smart-map" element={<div>Smart map</div>} />

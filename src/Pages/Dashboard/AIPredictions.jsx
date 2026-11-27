@@ -25,7 +25,6 @@ export default function AiPredictions() {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Page Heading and Filters */}
       <div className="flex flex-wrap items-center justify-between gap-5">
         <PageHeading
           title="AI predictions"
@@ -33,7 +32,6 @@ export default function AiPredictions() {
         />
 
         <div className="flex flex-wrap items-center gap-3">
-          {/* Road Filter */}
           <label className="relative flex h-11 min-w-[190px] items-center rounded-lg border border-slate-200 bg-white text-sm font-semibold text-slate-700 shadow-sm">
             <select
               value={selectedRoad}
@@ -53,8 +51,6 @@ export default function AiPredictions() {
               className="pointer-events-none absolute right-3 text-slate-500"
             />
           </label>
-
-          {/* Forecast Window Filter */}
           <label className="relative flex h-11 min-w-[160px] items-center rounded-lg border border-slate-200 bg-white text-sm font-semibold text-slate-700 shadow-sm">
             <select
               value={forecastWindow}
@@ -76,11 +72,8 @@ export default function AiPredictions() {
           </label>
         </div>
       </div>
-
-      {/* Forecast Statistics */}
       <ForecastStats stats={predictions.stats} />
 
-      {/* Congestion Chart and Recommended Next Step */}
       <section className="grid min-w-0 gap-5 xl:grid-cols-[1.8fr_0.9fr]">
         <CongestionChart
           data={predictions.chart}
@@ -90,17 +83,12 @@ export default function AiPredictions() {
         <NextStepCard data={predictions.nextStep} />
       </section>
 
-      {/* Current vs Predicted and Coverage */}
       <section className="grid min-w-0 gap-5 xl:grid-cols-[1.8fr_0.9fr]">
         <CongestionComparison data={predictions.comparison} />
 
         <PredictionCoverage data={predictions.coverage} />
       </section>
-
-      {/* Predicted Road Hotspots */}
       <PredictedHotspots hotspots={predictions.hotspots} />
-
-      {/* Forecast Disclaimer */}
       <ForecastNotice />
     </div>
   )

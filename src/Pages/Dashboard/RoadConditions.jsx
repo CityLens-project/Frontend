@@ -1,5 +1,7 @@
+
 import { useState } from 'react'
 import { CircleCheck, Clock, Download, MessageSquare, Search } from 'lucide-react'
+
 import PageHeading from '../../Components/Dashboard/PageHeading'
 import StatCard from '../../Components/Dashboard/StatCard'
 import Button from '../../Components/Dashboard/Button'
@@ -8,12 +10,14 @@ import ComplaintFilters from '../../Components/Complaints/ComplaintFilters'
 import ComplaintsTable from '../../Components/Complaints/ComplaintsTable'
 import Pagination from '../../Components/Dashboard/Pagination'
 import PriorityNotice from '../../Components/Complaints/PriorityNotice'
+
 import {
   DISTRICTS,
   PAGE_SIZE,
   getComplaints,
   getComplaintsSummary,
 } from '../../Data/complaints'
+
 import { ComplaintStatus } from '../../Constants/complaintStatus'
 import { toISODate } from '../../Utils/date'
 import { downloadCsv } from '../../Utils/csv'
@@ -28,11 +32,21 @@ const initialFilters = {
 }
 
 function resolveDateRange({ range, from, to }) {
-  if (range === 'custom') return { dateFrom: from, dateTo: to }
-  if (range === 'all') return { dateFrom: '', dateTo: '' }
+  if (range === 'custom') {
+    return { dateFrom: from, dateTo: to }
+  }
+
+  if (range === 'all') {
+    return { dateFrom: '', dateTo: '' }
+  }
+
   const start = new Date()
   start.setDate(start.getDate() - (range === '7d' ? 6 : 29))
-  return { dateFrom: toISODate(start), dateTo: toISODate(new Date()) }
+
+  return {
+    dateFrom: toISODate(start),
+    dateTo: toISODate(new Date()),
+  }
 }
 
 export default function Complaints() {
@@ -45,6 +59,7 @@ export default function Complaints() {
   }
 
   const { dateFrom, dateTo } = resolveDateRange(filters)
+
   const query = {
     status: filters.status,
     search: filters.search,
@@ -53,13 +68,20 @@ export default function Complaints() {
     dateTo,
   }
 
-  const { items, total, counts } = getComplaints({ ...query, page })
+  const { items, total, counts } = getComplaints({
+    ...query,
+    page,
+  })
+
   const summary = getComplaintsSummary()
 
   const stats = [
     {
       label: 'Open complaints',
-      value: summary.counts.under_review + summary.counts.assigned + summary.counts.in_progress,
+      value:
+        summary.counts.under_review +
+        summary.counts.assigned +
+        summary.counts.in_progress,
       context: 'Across all city departments',
       icon: MessageSquare,
       iconClassName: 'text-primary',
@@ -79,18 +101,35 @@ export default function Complaints() {
       iconClassName: 'text-primary',
     },
     {
-      label: 'Total Resolved ',
+      label: 'Total Resolved',
       value: summary.counts.resolved,
       context: 'Thanks to your city teams',
       icon: CircleCheck,
       iconClassName: 'text-success',
     },
   ]
+
   const handleExport = () => {
-    const { items: all } = getComplaints({ ...query, page: 1, pageSize: Number.MAX_SAFE_INTEGER })
+    const { items: all } = getComplaints({
+      ...query,
+      page: 1,
+      pageSize: Number.MAX_SAFE_INTEGER,
+    })
+
     downloadCsv(
-      complaints-${toISODate(new Date())}.csv,
-      ['Reference', 'Complaint', 'Category', 'Priority', 'Status', 'District', 'Road', 'Submitted', 'Assigned department', 'Reported by'],
+      `complaints-${toISODate(new Date())}.csv`,
+      [
+        'Reference',
+        'Complaint',
+        'Category',
+        'Priority',
+        'Status',
+        'District',
+        'Road',
+        'Submitted',
+        'Assigned department',
+        'Reported by',
+      ],
       all.map((c) => [
         c.reference,
         c.title,
@@ -113,6 +152,7 @@ export default function Complaints() {
           title="Citizen complaints"
           description="Listen to your community. Review reports and coordinate the next step."
         />
+
         <Button icon={Download} onClick={handleExport}>
           Export complaints
         </Button>
@@ -123,16 +163,31 @@ export default function Complaints() {
           <StatCard key={stat.label} {...stat} />
         ))}
       </section>
+
       <section className="flex flex-col gap-[18px] rounded-2xl border border-slate-200 bg-white p-card shadow-sm">
         <ComplaintTabs
           active={filters.status}
           counts={counts}
           onChange={(status) => updateFilters({ status })}
         />
-        <ComplaintFilters filters={filters} districts={DISTRICTS} onChange={updateFilters} />
+
+        <ComplaintFilters
+          filters={filters}
+          districts={DISTRICTS}
+          onChange={updateFilters}
+        />
+
         <ComplaintsTable complaints={items} />
-        <Pagination page={page} pageSize={PAGE_SIZE} total={total} onPageChange={setPage} itemLabel="complaints"/>
+
+        <Pagination
+          page={page}
+          pageSize={PAGE_SIZE}
+          total={total}
+          onPageChange={setPage}
+          itemLabel="complaints"
+        />
       </section>
+
       <PriorityNotice count={summary.highPriorityRoadIssues} />
     </div>
   )

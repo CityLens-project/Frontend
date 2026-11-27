@@ -20,10 +20,7 @@ export default function App() {
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<Navigate to="overview" replace />} />
         <Route path="overview" element={<Overview />} />
-        <Route
-          path="traffic-analytics"
-          element={<div>Traffic analytics</div>}
-        />
+        <Route path="traffic-analytics" element={<div>Traffic analytics</div>} />
         <Route path="road-conditions" element={<RoadCondition />} />
         <Route path="ai-predictions" element={<AiPredictions />} />
         <Route path="complaints" element={<Complaints />} />

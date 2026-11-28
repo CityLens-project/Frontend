@@ -9,6 +9,7 @@ import {
   Sparkles,
   MessageSquare,
   Map,
+  FlaskConical,
 } from "lucide-react";
 
 function Sidebar() {
@@ -19,6 +20,7 @@ function Sidebar() {
     { name: "AI predictions", path: "/dashboard/ai-predictions", icon: Sparkles },
     { name: "Complaints", path: "/dashboard/complaints", icon: MessageSquare },
     { name: "Open smart map", path: "/dashboard/smart-map", icon: Map },
+    { name: "DSS & Simulation", path: "/dashboard/decision-support", icon: FlaskConical },
   ];
 
   return (

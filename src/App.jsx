@@ -8,7 +8,7 @@ import Overview from "./Pages/Dashboard/Overview";
 import Complaints from "./Pages/Dashboard/Complaints";
 import RoadCondition from "./Pages/Dashboard/RoadConditions";
 import AiPredictions from "./Pages/Dashboard/AIPredictions";
-
+import SmartMap from "./Pages/Dashboard/SmartMap";
 import DashboardLayout from "./Components/Layout/DashboardLayout";
 
 export default function App() {
@@ -24,7 +24,8 @@ export default function App() {
         <Route path="road-conditions" element={<RoadCondition />} />
         <Route path="ai-predictions" element={<AiPredictions />} />
         <Route path="complaints" element={<Complaints />} />
-        <Route path="smart-map" element={<div>Smart map</div>} />
+        <Route path="smart-map" element={<SmartMap />} />
+        <Route path="decision-support" element={<div>Dss&Simulation</div>} />
       </Route>
     </Routes>
   );
